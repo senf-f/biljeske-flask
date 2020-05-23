@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Bilježnica</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center;">Bilježnica</h1>
+    {% if notes|length < 1 %}
+    <h4 style="text-align: center;">Bilježnica je prazna. Upiši prvu bilješku:</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Kategorija</th>
+            <th>Bilješka</th>
+            <th>Datum</th>
+            <th>Akcija</th>
+        </tr>
+        {% for note in notes %}  
+            <tr>
+                <td>{{ note.category }}</td>
+                <td>{{ note.note }}</td>
+                <td>{{ note.date_created }}</td>
+                <td>
+                    <a href="/delete/{{note.id}}">Izbriši</a>
+                    <a href="/update/{{note.id}}">Ažuriraj</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <div class:"form">
+        <form action='/' method='POST'>
+            <input type="text" name="category" id="category">
+            <input type="text" name="note" id="note">
+            <input type="submit" value="Dodaj bilješku">
+        </form>
+    </div>
+</div>
+{% endblock %}
