@@ -1,11 +1,10 @@
-#video 25:00 https://www.youtube.com/watch?v=Z1RJmh_OqeA&list=PLtMU9JqSZxV75fVrKCMgmJtv2vuFPzI2V&index=11&t=0s
-
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.static_folder = 'static'
 db = SQLAlchemy(app)
 
 class Note(db.Model):
@@ -22,7 +21,7 @@ def index():
     if request.method == 'POST':
         category_content = request.form['category']
         note_content = request.form['note']
-        new_note = Note(category=category_content, note=note_content)
+        new_note = Note(category=category_content, note=note_content, date_created=datetime.now())
 
         try:
             db.session.add(new_note)
