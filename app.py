@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import pytz
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -21,7 +22,9 @@ def index():
     if request.method == 'POST':
         category_content = request.form['category']
         note_content = request.form['note']
-        new_note = Note(category=category_content, note=note_content, date_created=datetime.now())
+        new_note = Note(category=category_content, note=note_content, date_created=datetime.now(pytz.timezone("CET")))
+        
+        print(datetime.now().strftime("%d%m%Y, %H:%M:%S"))
 
         try:
             db.session.add(new_note)
