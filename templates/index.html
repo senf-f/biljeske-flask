@@ -23,8 +23,10 @@
                 <td>{{ note.note }}</td>
                 <td>{{ note.date_created }}</td>
                 <td>
-                    <a href="/delete/{{note.id}}">Izbriši</a>
-                    <a href="/update/{{note.id}}">Ažuriraj</a>
+                    <div class="btn-group">                    
+                        <button><a href="/delete/{{note.id}}">Izbriši</a></button>
+                        <button><a href="/update/{{note.id}}">Ažuriraj</a></button>
+                    </div>
                 </td>
             </tr>
         {% endfor %}
