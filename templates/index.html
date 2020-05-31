@@ -10,27 +10,33 @@
     {% if notes|length < 1 %}
     <h4 style="text-align: center;">Bilježnica je prazna. Upiši prvu bilješku:</h4>
     {% else %}
-    <table>
-        <tr>
-            <th>Kategorija</th>
-            <th>Bilješka</th>
-            <th>Datum</th>
-            <th>Akcija</th>
-        </tr>
-        {% for note in notes %}  
+    <div style="overflow-x:auto;">
+        <table>
+            <tr>
+                <th>Kategorija</th>
+                <th>Bilješka</th>
+                <th>Datum</th>
+                <th>Akcija</th>
+            </tr>
+            {% for note in notes %}  
             <tr>
                 <td>{{ note.category }}</td>
                 <td>{{ note.note }}</td>
-                <td>{{ note.date_created.strftime("%d.%m.%Y, %H:%M:%S") }}</td>
+                <td>
+                    <div>{{ note.date_created.strftime("%d.%m.%Y") }}</div>
+                    <div>&nbsp;</div>
+                    <div>{{ note.date_created.strftime("%H:%M:%S") }}</div>
+                </td>
                 <td>
                     <div class="btn-group">                    
-                        <button><a href="/delete/{{note.id}}">Izbriši</a></button>
-                        <button><a href="/update/{{note.id}}">Ažuriraj</a></button>
+                        <button type="button" class="btn btn-primary"><a href="/delete/{{note.id}}">Izbriši</a></button>
+                        <button type="button" class="btn btn-secondary"><a href="/update/{{note.id}}">Ažuriraj</a></button>
                     </div>
                 </td>
             </tr>
-        {% endfor %}
-    </table>
+            {% endfor %}
+        </table>
+    </div>
     {% endif %}
     <div class="form">
         <form action='/' method='POST'>

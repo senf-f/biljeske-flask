@@ -8,7 +8,7 @@ body {
     align-items: center;
     height: 100vh;
     color: rgb(27, 7, 7);
-    
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .form * {
@@ -20,7 +20,8 @@ body {
 
 input {
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Courier New', Courier, monospace;
     color: #333;
     font-size: 1.2rem;
     margin: 1 auto;
@@ -35,6 +36,10 @@ input {
     width: 75%;
     margin: 1em;
     max-width: 100%;
+  }
+
+  a {
+    font-family: 'Courier New', Courier, monospace;
   }
 
   input[type="submit"] {
@@ -66,13 +71,25 @@ input {
     background-color: -internal-light-dark-color(rgb(239, 239, 239), rgb(74, 74, 74));
     box-sizing: border-box;
     margin: 0em;
-    font: 400 13.3333px Arial;
+    /*font: 400 13.3333px Arial;*/
     padding: 1px 6px;
     border-width: 2px;
     border-style: outset;
     border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195));
     border-image: initial;
 }  
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
 
 .btn-group-sm {
   padding: .25rem .5rem;
@@ -85,3 +102,54 @@ input {
   margin-left: -1px;
 }
 
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+th, tr, td {
+  border-radius: 1px;
+  padding: 2px 3px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  border: 2px;
+  align-items: center;
+}
+
+th {
+  background-color: #95A5A6;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+tr {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+}
