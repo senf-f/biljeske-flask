@@ -9,6 +9,7 @@ body {
     height: 100vh;
     color: rgb(27, 7, 7);
     font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 60px;
 }
 
 .form * {
