@@ -39,10 +39,12 @@
     </div>
     {% endif %}
     <div class="form">
-        <form action='/' method='POST'>
-            <input type="text" name="category" id="category" placeholder="Kategorija">
-            <input type="textarea" name="note" id="note" placeholder="Bilješka">
-            <input type="submit" value="Dodaj bilješku">
+        <form class='my-form' action='/' method='POST'>
+            <div class='grid grid-2'>
+                <input type="text" name="category" id="category" placeholder="Kategorija">
+                <input type="textarea" name="note" id="note" placeholder="Bilješka">
+                <input type="submit" value="Dodaj bilješku">
+            </div>
         </form>
     </div>
 </div>
