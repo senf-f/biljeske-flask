@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block body %}
-<div class="content">
-    <h1 style="text-align: center;">Bilježnica</h1>
-    {% if notes|length < 1 %}
-    <h4 style="text-align: center;">Bilježnica je prazna. Upiši prvu bilješku:</h4>
-    {% else %}
-    <div style="overflow-x:auto;">
+<div class="container">
+    <div class="card">
+        <h1 style="text-align: center;">Bilješke</h1>
+        {% if notes|length < 1 %}
+        <h4 style="text-align: center;">Bilježnica je prazna. Upiši prvu bilješku:</h4>
+        {% else %}
         <table>
             <tr>
                 <th>Kategorija</th>
@@ -38,14 +38,16 @@
         </table>
     </div>
     {% endif %}
-    <div class="form">
-        <form class='my-form' action='/' method='POST'>
-            <div class='grid grid-2'>
-                <input type="text" name="category" id="category" placeholder="Kategorija">
-                <input type="textarea" name="note" id="note" placeholder="Bilješka">
-                <input type="submit" value="Dodaj bilješku">
-            </div>
-        </form>
+    <div class="card">
+        <div class="form">
+            <form class='my-form' action='/' method='POST'>
+                <div class='grid grid-2'>
+                    <input type="text" name="category" id="category" placeholder="Kategorija">
+                    <input type="textarea" name="note" id="note" placeholder="Bilješka">
+                    <input type="submit" value="Dodaj bilješku">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}
