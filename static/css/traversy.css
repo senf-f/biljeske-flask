@@ -92,11 +92,20 @@ table {
 */
 .footer-content {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
+
 
 .contact {
     padding: 5px;
+    text-align: right;
+}
+
+.contact i {
+  color: #7D7A9E;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
 }
 
 .table-header {
@@ -204,6 +213,30 @@ p {
     transition: transform 0.4s ease-in-out;
   }
 
+
+
+
+
+.tooltip { /* Container for our tooltip */
+    position: relative;   
+    display: inline-block;
+}
+
+.tooltip .tooltiptext { /* This is for the tooltip text */
+    visibility: hidden;
+    width: 100px;
+    background-color: #8512d5;
+   color: white;
+   text-align: center;
+   padding: 10px;
+   border-radius: 10px;  /* This defines tooltip text position */
+   position: absolute;
+   z-index: 1;
+} 
+
+.tooltip:hover .tooltiptext { /* Makes tooltip text visible when text is hovered on */
+   visibility: visible;
+}
 
 @media (max-width: 900px) {
     .container {
