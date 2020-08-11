@@ -12,7 +12,7 @@
         <h4 style="text-align: center;">Bilježnica je prazna. Upiši prvu bilješku:</h4>
         {% else %}
         <table>
-            <tr>
+            <tr class="table-header">
                 <th>Kategorija</th>
                 <th>Bilješka</th>
                 <th>Datum</th>
@@ -41,7 +41,8 @@
     <div class="card">
         <div class="form">
             <form class='my-form' action='/' method='POST'>
-                <div class='grid grid-2'>
+                <div class='form-grid'>
+                    <img src="{{ url_for('static', filename='images/Single-Quiver-with-Notebook-Open.jpg') }}">
                     <input type="text" name="category" id="category" placeholder="Kategorija">
                     <input type="textarea" name="note" id="note" placeholder="Bilješka">
                     <input type="submit" value="Dodaj bilješku">
