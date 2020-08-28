@@ -12,28 +12,33 @@
         <h4 style="text-align: center;">Bilježnica je prazna. Upiši prvu bilješku:</h4>
         {% else %}
         <table>
-            <tr class="table-header">
-                <th>Kategorija</th>
-                <th>Bilješka</th>
-                <th>Datum</th>
-                <th>Akcija</th>
-            </tr>
-            {% for note in notes %}  
-            <tr>
-                <td>{{ note.category }}</td>
-                <td>{{ note.note }}</td>
-                <td>
-                    <div>{{ note.date_created.strftime("%d.%m.%Y") }}</div>
-                    <div>&nbsp;</div>
-                    <div>{{ note.date_created.strftime("%H:%M:%S") }}</div>
-                </td>
-                <td>
-                    <div class="btn-group">                    
-                        <button type="button" class="btn btn-primary"><a href="/delete/{{note.id}}"><i class="fas fa-trash-alt"></i></a></button>
-                        <button type="button" class="btn btn-secondary"><a href="/update/{{note.id}}"><i class="fas fa-edit"></i></a></button>
-                    </div>
-                </td>
-            </tr>
+            <thead>
+                <tr class="table-header">
+                    <th class="table-category">Kategorija</th>
+                    <th class="table-note">Bilješka</th>
+                    <th class="table-date">Datum</th>
+                    <th class="table-action">Akcija</th>
+                </tr>
+            </thead>
+            {% for note in notes %}
+            <tbody>
+                <tr>
+                    <td>{{ note.category }}</td>
+                    <td>{{ note.note }}</td>
+                    <td>
+                        <div>{{ note.date_created.strftime("%d.%m.%Y") }}</div>
+                        <div>&nbsp;</div>
+                        <div>{{ note.date_created.strftime("%H:%M:%S") }}</div>
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary"><a href="/delete/{{note.id}}"><i class="fas fa-trash-alt fa-fw"></i></a></button>
+                            <button type="button" class="btn btn-secondary"><a href="/update/{{note.id}}"><i class="fas fa-edit fa-fw"></i></a></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
             {% endfor %}
         </table>
     </div>
