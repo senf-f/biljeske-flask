@@ -41,7 +41,7 @@ img {
     gap: 1em;
     width: fit-content;
     margin: auto;
-    padding: 2em;
+    padding: 5em;
 }
 
 .card {
@@ -106,7 +106,7 @@ table {
   color: #7D7A9E;
   margin-left: 10px;
   margin-right: 10px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 p {
@@ -270,4 +270,14 @@ tbody tr {
     .container {
         grid-template-columns: 2fr;
     }
+}
+
+@media (max-width: 380px) {
+  .container {
+      grid-template-columns: 1fr;
+  }
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+}
 }
