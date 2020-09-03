@@ -276,8 +276,5 @@ tbody tr {
   .container {
       grid-template-columns: 1fr;
   }
-  .footer-content {
-    display: grid;
-    grid-template-columns: 1fr;
-}
+
 }
