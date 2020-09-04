@@ -20,8 +20,9 @@
                     <th class="table-action">Akcija</th>
                 </tr>
             </thead>
-            {% for note in notes %}
+
             <tbody>
+                {% for note in notes %}
                 <tr>
                     <td>{{ note.category }}</td>
                     <td>{{ note.note }}</td>
@@ -37,9 +38,10 @@
                         </div>
                     </td>
                 </tr>
+                {% endfor %}
             </tbody>
 
-            {% endfor %}
+
         </table>
     </div>
     {% endif %}
